@@ -42,7 +42,7 @@ namespace sockcanpp { namespace exceptions {
             ~CanException() {}
 
         public: // +++ Overrides +++
-            const char* what() { return _message.c_str(); }
+            const char* what() const noexcept override { return _message.c_str(); }
 
         public: // +++ Getter +++
             const int32_t getSocket() const { return _socket; }
